@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title> Add App! </title>
+		<style> 
+		* {font-size: 35px;}
+		body {background-color: lightyellow;}
+		</style>
+		<script>
+			let add = () =>
+			{
+				event.preventDefault();
+				let num1=document.getElementById("num1");
+				let num2=document.getElementById("num2");
+				let msg=document.getElementById("msg");
+				if(num1.value=="")
+				{
+					alert("First number cannot be empty");
+					num1.focus();
+					msg.innerHTML="";
+					return;
+				}
+				if(num2.value=="")
+				{
+					alert("Second number cannot be empty");
+					num2.focus();
+					msg.innerHTML="";
+					return;
+				}
+				let result= parseFloat(num1.value) + parseFloat(num2.value);
+				let m = "The addition is : " + result;
+				msg.innerHTML=m;
+			}
+		</script>
+	</head>
+	<body>
+	<center>
+		<h1> Add application </h1>
+		<form onsubmit="add()">
+			<input type="number" step="any" placeholder="Enter first number here" id="num1"/>
+			<br/><br/>
+			<input type="number" step="any" placeholder="Enter second number here" id="num2"/>
+			<br/><br/>
+			<input type="submit" placeholder="Add!"/>
+		</form>
+		<h1 id="msg"></h1>
+	</center>
+	</body>
+
+</html>
